@@ -1,0 +1,22 @@
+{
+  "name": "cypresslearning",
+  "version": "1.0.0",
+  "description": "cypress learning framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaibhav Jain",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.16.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-real-events": "^1.13.0",
+    "exceljs": "^4.4.0",
+    "mochawesome": "^7.1.3"
+  },
+  "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.5",
+    "cypress-iframe": "^1.0.1"
+  }
+}
