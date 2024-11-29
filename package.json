@@ -4,13 +4,15 @@
   "description": "cypress learning framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dashboard-run": "npx cypress run --record --key dc26d187-9a97-4366-836f-69dbe7d2d187"
   },
   "author": "Vaibhav Jain",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.16.0",
     "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-real-events": "^1.13.0",
     "exceljs": "^4.4.0",
     "mochawesome": "^7.1.3"

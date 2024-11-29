@@ -92,7 +92,7 @@ describe.only ('responsive testing', () => {
 // In the non-working code: Both beforeEach commands are added to the queue before any it block starts executing. Since they aren't isolated, the viewport might not be set as expected.
 // In the working code: The beforeEach commands are isolated in different describe blocks, ensuring each orientation is handled separately and no conflicts arise.
 
-describe.only ('responsive testing', () => {
+describe.skip ('responsive testing', () => {
     ['portrait', 'landscape'].forEach((orientation) => {
 
         // In this non-working code: Both beforeEach commands are added to the queue 

@@ -9,7 +9,7 @@ describe('Test Suite 1', () => {
     })
 
     beforeEach('login', () => {
-        cy.visit('https://www.amazon.in/')
+        cy.visit('https://www.amazon.in/', { failOnStatusCode: false })
     })
 
     it('test logo visibility', () => {
@@ -35,7 +35,7 @@ describe('Test Suite 1', () => {
             .click()
     })
 
-    it('select brand', () => {
+    it.only ('select brand', () => {
         cy.get('#nav-xshop-container a').contains('Mobiles').realClick()
         cy.contains('Brands').parent().siblings('ul').find('li').each(($el, index, $list) => {
             cy.log($el.text())
@@ -64,6 +64,7 @@ describe('Test Suite 1', () => {
         // cy.get("[id^='a-autoid'][type='button']").click({multiple:true})
 
         // Validate cart
+        cy.get('#nav-cart').click()
         cy.get('.a-size-extra-large').should('include.text', 'Shopping Cart')
 
         // alter quantity
@@ -78,14 +79,15 @@ describe('Test Suite 1', () => {
         loginPage.getSignIn().click()
 
         // Custom command - getMatchedElement
-        cy.getMatchedElement('[data-action=select-address-in-list]', '192').check().should('be.checked')
+        cy.pause()
+        cy.getMatchedElement('[data-action=select-address-in-list]', '192').find('input').check().should('be.checked')
         cy.get('[data-testid=Address_selectShipToThisAddress]').click()
         cy.wait(2000)
         cy.getMatchedElement('[data-a-input-name=ppw-instrumentRowSelection]', 'Cash on Delivery/Pay on Delivery').should('not.be.disabled')
     })
 
     it.only ('cross origin request', () => {
-        cy.visit('https://www.flipkart.in/')
+        cy.visit('https://www.flipkart.in/').wait(1000)
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
     })
 

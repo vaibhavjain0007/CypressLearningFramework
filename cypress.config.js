@@ -3,7 +3,10 @@ const ExcelJS = require('exceljs');
 
 module.exports = defineConfig({
   e2e: {
+    projectId: "qfyky5",
+    reporter: 'cypress-mochawesome-reporter', // for html reports
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on) // for html reports
       // implement node event listeners here
       on('task', {
         customTask() {
@@ -42,4 +45,8 @@ module.exports = defineConfig({
      ] // Exclude .cy.js files
     // chromeWebSecurity: true
   },
+  env: {
+    "username": "9685075089",
+    "password": "Amisha@1ak"
+  }
 });

@@ -19,6 +19,7 @@ import 'cypress-iframe'
 import 'cypress-file-upload'
 import '@4tw/cypress-drag-drop'
 import 'cypress-real-events/support'
+import 'cypress-mochawesome-reporter/register'
 // import 'cypress'
 
 // Alternatively you can use CommonJS syntax:
