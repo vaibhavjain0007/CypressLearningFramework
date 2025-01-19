@@ -12,7 +12,7 @@ describe('test drag and drop', () => {
         cy.get('#myImage').drag('#targetDiv')
     })
 
-    it.only ('drag and drop using cypress real events plugin methods', () => {
+    it.skip ('drag and drop using cypress real events plugin methods', () => {
         cy.visit('https://artoftesting.com/samplesiteforselenium')
         let offsetTargetLeft;
         let offsetTargetTop

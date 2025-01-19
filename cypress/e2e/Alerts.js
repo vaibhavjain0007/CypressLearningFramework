@@ -3,7 +3,7 @@ describe ('test alerts in cypress', () => {
     it.skip ('JS Alerts', () => {
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         cy.on('window:alert', (message) => {
-            expect(message).to.contain('I am a JS Alert')
+            expect(message).to.contain('I am as JS Alert') // should vs expect
         })
         cy.contains('Click for JS Alert').click()
         cy.get('#result').should('be.visible').and('have.text', 'You successfully clicked an alert')
@@ -54,7 +54,7 @@ describe ('test alerts in cypress', () => {
 
 
 // viewport ----> cypress runner
-describe.only ('responsive testing', () => {
+describe ('responsive testing', () => {
     ['portrait', 'landscape'].forEach((orientation) => {
 
         // By nesting the describe blocks and ensuring each test has 
